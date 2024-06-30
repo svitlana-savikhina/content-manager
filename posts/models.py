@@ -1,4 +1,6 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Boolean
+from datetime import datetime
+
+from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Boolean, func
 from sqlalchemy.orm import relationship
 from database import Base
 
@@ -22,6 +24,7 @@ class Post(Base):
 
     user = relationship("User", back_populates="posts")
     comments = relationship("Comment", back_populates="post")
+    blocked = Column(Boolean, default=False)
 
 
 class Comment(Base):
@@ -30,7 +33,7 @@ class Comment(Base):
     content = Column(String)
     post_id = Column(Integer, ForeignKey("posts.id"))
     user_id = Column(Integer, ForeignKey("users.id"))
-    created_at = Column(DateTime)
+    created_at = Column(DateTime, default=func.now())
     blocked = Column(Boolean, default=False)
 
     post = relationship("Post", back_populates="comments")
