@@ -1,4 +1,4 @@
-# content-manager" 
+# content-manager
 A prototype project includes features for user authentication, content creation, moderation with profanity filtering, and analytics on user interactions.
 ## Features
 * JWT authentication
