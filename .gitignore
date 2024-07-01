@@ -1,5 +1,4 @@
 .env
-__pycache__
-.idea/
-content.db
-
+ __pycache__
+ .idea/
+ content.db
