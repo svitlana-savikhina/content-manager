@@ -40,5 +40,5 @@ alembic revision --autogenerate
 ```
 ### 7.Run:
 ```shell
-uvicorn aggregator_of_advertisements.main:app --reload
+uvicorn main:app --reload
 ```
